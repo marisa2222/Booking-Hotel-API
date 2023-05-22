@@ -1,9 +1,6 @@
 import mongoose from "mongoose";
 const HotelSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
+  
   type: {
     type: String,
     required: true,
@@ -44,9 +41,11 @@ const HotelSchema = new mongoose.Schema({
     required: true,
   },
   featured: {
-    type: Boolean,
-    default: false,
+    type: [String],
   },
+  location:{
+    type: [Number],
+  }
 });
 
 export default mongoose.model("Hotel", HotelSchema)
